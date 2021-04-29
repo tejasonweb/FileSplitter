@@ -1,0 +1,30 @@
+﻿<Window x:Class="FileSplitter.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+        xmlns:local="clr-namespace:FileSplitter"
+        mc:Ignorable="d"
+        Title="FileSplitter" Height="317.49" Width="800" WindowStyle="ToolWindow" ResizeMode="NoResize" WindowStartupLocation="CenterScreen" Foreground="Black">
+    <Grid>
+        <StackPanel>
+            <TextBlock Text="Welcome to File Splitter" HorizontalAlignment="Center" FontSize="20" Foreground="Firebrick" Margin="0 12 0 0"></TextBlock>
+            <StackPanel Margin="20 20">
+            <StackPanel Orientation="Horizontal" >
+                <TextBox x:Name="filetosplit" Margin="10" materialDesign:HintAssist.Hint="Select the File to Split" Width="664" VerticalContentAlignment="Bottom"></TextBox>
+                <Button x:Name="pickinputfile" Margin="10" Background="{x:Null}" Click="pickinputfile_Click">
+                    <materialDesign:PackIcon Kind="File" Foreground="#515251"></materialDesign:PackIcon>
+                </Button>
+                
+            </StackPanel>
+                <StackPanel Orientation="Horizontal" Margin="0 50">
+                <TextBox x:Name="mbsize" materialDesign:HintAssist.Hint="Split Size in MB (Default is 100 MB)" Width="200" Margin="10"></TextBox>    
+                <Button Click="Button_Click" Background="{x:Null}" Foreground="#515251" Margin="456 0 0 0" x:Name="splitbutton" >SPLIT</Button>
+                </StackPanel>
+                
+            </StackPanel>
+        </StackPanel>
+        <ProgressBar x:Name="splitprogress" IsIndeterminate="True" Visibility="Collapsed" Foreground="#515251" Background="LightGray" VerticalAlignment="Bottom"></ProgressBar>
+    </Grid>
+</Window>
