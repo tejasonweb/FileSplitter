@@ -158,58 +158,6 @@ namespace FileSplitter
                 }
                 sw.Close();
             }
-
-
-
-            //using (StreamReader sr = new StreamReader(filetosp))
-            //{
-            //    try
-            //    {
-            //        StreamWriter sw = new StreamWriter(outfile);
-            //        do
-            //        {
-            //            //System.Windows.Forms.MessageBox.Show(sr.ReadLine());
-            //            if (count % 10 == 0)
-            //            {
-            //                if (new FileInfo(outfile).Length >= (DefaultSpSize * 1048576) && datatowrite == buffer.Length)
-            //                {
-            //                    // file size exceeded the limit, time to create a new file
-            //                    // however before that, make sure to write the data until the newline
-
-            //                    char[] temp = new char[1];
-            //                    int tempcount = 0;
-            //                    do
-            //                    {
-            //                        var tempdata = sr.ReadBlock(temp, 0, temp.Length);
-            //                        sw.Write(temp);
-            //                        if (temp[0] == '\n' || tempcount > 5000 || temp[0]!='\0')
-            //                        {
-            //                            break;
-            //                        }
-            //                        tempcount++;
-            //                    }
-            //                    while (true);
-
-            //                    sw.Close();
-            //                    i++;
-            //                    outfile = (filetosp.Replace(extension, "") + "Split_" + i + extension);
-            //                    sw = new StreamWriter(outfile);
-            //                }
-            //            }
-            //            //System.Windows.Forms.MessageBox.Show(buffer.ToString());
-            //            datatowrite = sr.ReadBlock(buffer, 0, buffer.Length);
-            //            sw.Write(buffer);
-            //            Array.Clear(buffer,0,buffer.Length);
-            //            //await sw.WriteLineAsync(sr.ReadLine());
-            //            count++;
-            //        }
-            //        while (datatowrite == buffer.Length);       // if it is not equal, there is no more data to read
-            //    }
-            //    catch (Exception ex)
-            //    {
-            //        System.Windows.MessageBox.Show(ex.Message, "Exception");
-            //    }
-            //}
             return true;
         }
 
