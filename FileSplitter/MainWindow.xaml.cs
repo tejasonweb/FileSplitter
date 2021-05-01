@@ -57,27 +57,31 @@ namespace FileSplitter
                             string timetaken = Convert.ToInt32((after - before).TotalSeconds) > 60 ? ((after - before).TotalMinutes > 60 ? (Math.Round((after - before).TotalHours)).ToString() + " Hours" : Math.Round((after - before).TotalMinutes).ToString() + " Minutes") : Math.Round((after - before).TotalSeconds).ToString() + " Seconds";
 
                             if (result)
-                                System.Windows.Forms.MessageBox.Show("File Split Completed, Took " + timetaken + ".");
+                                System.Windows.Forms.MessageBox.Show("File Split Completed, Took " + timetaken + ".", "Success",MessageBoxButtons.OK, MessageBoxIcon.Information);
                             else
-                                System.Windows.Forms.MessageBox.Show("Failed to Split");
+                                System.Windows.Forms.MessageBox.Show("Failed to Split","Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                             enableForm();
                         }
                         catch(Exception ex)
                         {
-                            System.Windows.Forms.MessageBox.Show("Exception Occurred: " + ex.Message, "Exception");
+                            System.Windows.Forms.MessageBox.Show("Exception Occurred: " + ex.Message, "Exception", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                             enableForm();
                         }
                     }
                     else
                     {
-                        System.Windows.Forms.MessageBox.Show("File is already smaller than the specified split size (Default 100 MB).");
+                        System.Windows.Forms.MessageBox.Show("File is already smaller than the specified split size (Default 100 MB).","Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
 
                     }
                 }
                 else
                 {
-                    System.Windows.Forms.MessageBox.Show("Incorrect Split Size provided!", "Error");
+                    System.Windows.Forms.MessageBox.Show("Incorrect Split Size provided!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
+            }
+            else
+            {
+               System.Windows.Forms.MessageBox.Show("Please select the file to split!","Error",MessageBoxButtons.OK,MessageBoxIcon.Error);
             }
         }
 
